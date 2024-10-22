@@ -9,6 +9,10 @@
 - [Seminar 3 - Array-uri](./s3/README.md)
 - [Seminar 4 - Closures, clase și erori](./s4/README.md)
 
+## Proiect
+- [Subiecte](https://drive.google.com/drive/u/1/folders/1n2jRA39x9xtuuvPxM87yJTiY9ObmLCmJ)
+- [Alocarea echipelor](https://docs.google.com/spreadsheets/d/1MsbjXvQaodTD3bz-rz_2G7Eg-ZqV-sIgqfE2Jz0PjiE/edit?usp=sharing)
+
 ## Alte materiale
 - [Suport curs](https://drive.google.com/file/d/18InAYfTKeFywwDsty0mYbjz6t4HJlg-w/view?usp=sharing)
 - [Cursuri video](https://www.youtube.com/watch?v=RLz2q9SKObw&list=PLYdpEVB86eG7P8z3bUn_lC7UZ-Jr4hUIR)

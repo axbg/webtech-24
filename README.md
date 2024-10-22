@@ -7,6 +7,7 @@
 - [Seminar 1 - Introducere: Git & JavaScript](./s1/README.md)
 - [Seminar 2 - Web & JavaScript 101](./s2/README.md)
 - [Seminar 3 - Array-uri](./s3/README.md)
+- [Seminar 4 - Closures, clase și erori](./s4/README.md)
 
 ## Alte materiale
 - [Suport curs](https://drive.google.com/file/d/18InAYfTKeFywwDsty0mYbjz6t4HJlg-w/view?usp=sharing)

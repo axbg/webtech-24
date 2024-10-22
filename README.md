@@ -9,7 +9,11 @@
 - [Seminar 3 - Array-uri](./s3/README.md)
 - [Seminar 4 - Closures, clase și erori](./s4/README.md)
 
+## Teme
+- [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59
+
 ## Proiect
+- [Specificații generale](https://docs.google.com/document/d/1HK2MVNMFAkI_o2VQY3R-3jxx51dDMbBRVlxuNm5knro/edit?tab=t.0)
 - [Subiecte](https://drive.google.com/drive/u/1/folders/1n2jRA39x9xtuuvPxM87yJTiY9ObmLCmJ)
 - [Alocarea echipelor](https://docs.google.com/spreadsheets/d/1MsbjXvQaodTD3bz-rz_2G7Eg-ZqV-sIgqfE2Jz0PjiE/edit?usp=sharing)
 

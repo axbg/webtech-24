@@ -10,6 +10,7 @@
 - [Seminar 4 - Closures, clase și erori](./s4/README.md)
 - [Seminar 5 - Programare asincronă: callback, Promise, async/await](./s5/README.md)
 - [Seminar 6 - Serverul HTTP: Node.js și Express](./s6/README.md)
+- [Seminar 7 - REST, baze de date și ORMs](./s7/README.md)
 
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59

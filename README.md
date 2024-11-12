@@ -12,6 +12,9 @@
 - [Seminar 6 - Serverul HTTP: Node.js și Express](./s6/README.md)
 - [Seminar 7 - REST, baze de date și ORMs](./s7/README.md)
 
+## Aplicație
+- [Versiunea curentă a aplicației](./app/)
+
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59
 - [Tema 2 - JavaScript](./t2/README.md) - deadline: 19 noiembrie 2024, 23:59

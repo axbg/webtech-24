@@ -11,9 +11,7 @@
 - [Seminar 5 - Programare asincronă: callback, Promise, async/await](./s5/README.md)
 - [Seminar 6 - Serverul HTTP: Node.js și Express](./s6/README.md)
 - [Seminar 7 - REST, baze de date și ORMs](./s7/README.md)
-
-## Aplicație
-- [Versiunea curentă a aplicației](./app/)
+- [Seminar 8 - Relațiile între entități și recapitulare back-end](./s8/README.md)
 
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59
@@ -23,6 +21,9 @@
 - [Specificații generale](https://docs.google.com/document/d/1HK2MVNMFAkI_o2VQY3R-3jxx51dDMbBRVlxuNm5knro/edit?tab=t.0)
 - [Subiecte](https://drive.google.com/drive/u/1/folders/1n2jRA39x9xtuuvPxM87yJTiY9ObmLCmJ)
 - [Alocarea echipelor](https://docs.google.com/spreadsheets/d/1MsbjXvQaodTD3bz-rz_2G7Eg-ZqV-sIgqfE2Jz0PjiE/edit?usp=sharing)
+
+## Versiunile aplicației
+- [Seminar 6 - Definirea back-end-ului folosind Express](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-6)
 
 ## Formulare
 - [Formular întrebări anonime](https://forms.gle/BuoJ3gvZbVnurxuL9)

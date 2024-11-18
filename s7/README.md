@@ -303,7 +303,7 @@
     };
 
     export const getById = async (id) => {
-        // vom folosi entitatea movie pentru a intoarce un film
+        // vom folosi entitatea movie pentru a returna un film
         return await Movie.findOne({
             // care sa aiba id-ul primit ca parametru
             where: {

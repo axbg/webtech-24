@@ -21,6 +21,7 @@
 - [Specificații generale](https://docs.google.com/document/d/1HK2MVNMFAkI_o2VQY3R-3jxx51dDMbBRVlxuNm5knro/edit?tab=t.0)
 - [Subiecte](https://drive.google.com/drive/u/1/folders/1n2jRA39x9xtuuvPxM87yJTiY9ObmLCmJ)
 - [Alocarea echipelor](https://docs.google.com/spreadsheets/d/1MsbjXvQaodTD3bz-rz_2G7Eg-ZqV-sIgqfE2Jz0PjiE/edit?usp=sharing)
+- [Echipe și repo-uri](https://docs.google.com/spreadsheets/d/1d8VrBwV6aoJeYhTNDEdYjshuEZ2TZ-S-_dzx8kRB368/edit?usp=sharing)
 
 ## Versiunile aplicației
 - [Seminar 6 - Definirea back-end-ului folosind Express](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-6)

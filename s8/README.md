@@ -153,7 +153,7 @@
     ```javascript
     User.findAll({
         include: {
-            model: BankAccount
+            model: BankAccount,
             // optional, putem specifica doar o serie de atribute care sa fie extrase
             attributes: ['id', 'iban', 'amount']
         }
@@ -166,7 +166,7 @@
     ```javascript
     User.findAll({
         include: {
-            model: BankAccount
+            model: BankAccount,
             // optional, putem specifica doar o serie de atribute care sa fie extrase
             attributes: ['id', 'iban', 'amount'],
             // excludere tabelei de legatura din rezultat

@@ -9,3 +9,8 @@ router.get("/", moviesController.getMovies);
 // rute post
 router.post("/", moviesController.create);
 
+// rute patch
+router.patch("/", moviesController.update);
+
+// rute delete
+router.delete("/:id", moviesController.deleteMovie);

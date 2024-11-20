@@ -276,22 +276,28 @@
     import { Movie } from "../models/movies.js";
 
     export const getMovies = async (query) => {
+        // extragem toate campurile definite la nivelul entitatii Movie
+        //   acestea vor fi folosite pentru validarea filtrelor primite
+        const entityKeys = Object.keys(Movie.getAttributes());
+
         // eliminam din obiectul de query proprietatile pentru care nu dorim sa aplicam filtrarea
         delete query.id;
         delete query.poster;
 
-        // generarea dinamica a unui obiect where ce va fi folosit pentru filtrarea rezultatelor
-        //  acesta va tine cont doar de filtrele primite din front-end
-        const whereConditions = Object.keys(query).map(key => {
-            // in cazul proprietatilor title si director ne dorim o echivalenta partiala
-            //  ce poate fi verificata folosind operatorul like
-            if (key === "title" || key === "director") {
-                return { [key]: { [Op.like]: `%${query[key]}%` } }
-            }
+        // definim o conditie de selectie dinamica pe baza campurilor primite in cadrul apelului
+        //  dar inainte vom filtra criteriile primite ce nu reprezinta campuri valide pentru entitatea Movie
+        const whereConditions = Object.keys(query)
+            .filter(key => entityKeys.includes(key))
+            .map(key => {
+                // in cazul proprietatilor title si director ne dorim o echivalenta partiala
+                //  ce poate fi verificata folosind operatorul like
+                if (key === "title" || key === "director") {
+                    return { [key]: { [Op.like]: `%${query[key]}%` } }
+                }
 
-            // pentru toate celelalte campuri dorim sa testam egalitatea
-            return { [key]: query[key] }
-        });
+                // pentru toate celelalte campuri dorim sa testam egalitatea
+                return { [key]: query[key] }
+            });
 
         // vom folosi entitatea movie pentru a returna toate filmele
         return await Movie.findAll({

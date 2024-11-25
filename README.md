@@ -12,6 +12,7 @@
 - [Seminar 6 - Serverul HTTP: Node.js și Express](./s6/README.md)
 - [Seminar 7 - REST, baze de date și ORMs](./s7/README.md)
 - [Seminar 8 - Relațiile între entități și recapitulare back-end](./s8/README.md)
+- [Seminar 9 - Clientul HTTP: HTML, CSS și JavaScript: structură și request-uri](./s9/README.md)
 
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59

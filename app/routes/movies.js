@@ -7,10 +7,10 @@ export const router = express.Router();
 router.get("/", moviesController.getMovies);
 
 // rute post
-router.post("/", moviesController.create);
+router.post("/", moviesController.createMovie);
 
 // rute patch
-router.patch("/", moviesController.update);
+router.patch("/", moviesController.updateMovie);
 
 // rute delete
 router.delete("/:id", moviesController.deleteMovie);

@@ -4,7 +4,7 @@ const getMovies = async (req, res) => {
     res.send({records: await moviesService.getMovies(req.query)});
 };
 
-const create = async (req, res) => {
+const createMovie = async (req, res) => {
     try {
         res.status(201).send({movie: await moviesService.createMovie(req.body)});
     } catch (err) {
@@ -12,7 +12,7 @@ const create = async (req, res) => {
     }
 };
 
-const update = async (req, res) => {
+const updateMovie = async (req, res) => {
     const updatedMovie = await moviesService.updateMovie(req.body);
 
     if (!!updatedMovie) {
@@ -29,7 +29,7 @@ const deleteMovie = async (req, res) => {
 
 export {
     getMovies,
-    create,
-    update,
+    createMovie,
+    updateMovie,
     deleteMovie
 }

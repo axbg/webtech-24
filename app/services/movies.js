@@ -1,5 +1,5 @@
-import {Op} from "sequelize";
-import {Movie} from "../models/movies.js";
+import { Op } from "sequelize";
+import { Movie } from "../models/config.js";
 
 const getMovies = async (filters) => {
     // extragem toate campurile definite la nivelul entitatii Movie
@@ -16,11 +16,11 @@ const getMovies = async (filters) => {
         .map(key => {
             // in cazul in care filtrul este aplicat pe titlu sau pe regizor, aplicam clauza "like"
             if (key === "title" || key === "director") {
-                return {[key]: {[Op.like]: `%${filters[key]}%`}}
+                return { [key]: { [Op.like]: `%${filters[key]}%` } }
             }
 
             // pentru toate celelalte campuri dorim sa testam egalitatea
-            return {[key]: filters[key]}
+            return { [key]: filters[key] }
         });
 
     return await Movie.findAll({
@@ -38,17 +38,17 @@ const createMovie = async (movie) => {
 };
 
 const updateMovie = async (movie) => {
-    const identifiedMovie = await Movie.findOne({where: {id: movie.id}});
+    const identifiedMovie = await Movie.findOne({ where: { id: movie.id } });
 
     // daca filmul este identificat in baza de date, actualizam valorile
     if (!!identifiedMovie) {
-        identifiedMovie.set({...movie});
+        identifiedMovie.set({ ...movie });
         return await identifiedMovie.save();
     }
 }
 
 const deleteMovie = async (id) => {
-    return await Movie.destroy({where: {id: id}});
+    return await Movie.destroy({ where: { id: id } });
 }
 
 export {

@@ -13,6 +13,7 @@
 - [Seminar 7 - REST, baze de date și ORMs](./s7/README.md)
 - [Seminar 8 - Relațiile între entități și recapitulare back-end](./s8/README.md)
 - [Seminar 9 - Clientul HTTP: HTML, CSS și JavaScript: structură și request-uri](./s9/README.md)
+- [Seminar 10 - CSS: dezvoltarea interfețelor grafice pe web](./s10/README.md)
 
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59
@@ -27,6 +28,7 @@
 ## Versiunile aplicației
 - [Seminar 6 - Definirea back-end-ului folosind Express](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-6)
 - [Seminar 7 - Conectarea la baza de date folosind Sequelize](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-7)
+- [Seminar 8 - Definirea relațiilor între entități](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-8)
 
 ## Formulare
 - [Formular întrebări anonime](https://forms.gle/BuoJ3gvZbVnurxuL9)

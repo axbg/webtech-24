@@ -29,6 +29,7 @@
 - [Seminar 6 - Definirea back-end-ului folosind Express](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-6)
 - [Seminar 7 - Conectarea la baza de date folosind Sequelize](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-7)
 - [Seminar 8 - Definirea relațiilor între entități](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-8)
+- [Seminar 9 - Definirea front-end-ului: listare și creare](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-9)
 
 ## Formulare
 - [Formular întrebări anonime](https://forms.gle/BuoJ3gvZbVnurxuL9)

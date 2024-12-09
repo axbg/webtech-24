@@ -14,6 +14,7 @@
 - [Seminar 8 - Relațiile între entități și recapitulare back-end](./s8/README.md)
 - [Seminar 9 - Clientul HTTP: HTML, CSS și JavaScript: structură și request-uri](./s9/README.md)
 - [Seminar 10 - CSS: dezvoltarea interfețelor grafice pe web](./s10/README.md)
+- [Seminar 11 - React](./s11/README.md)
 
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59

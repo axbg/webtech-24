@@ -19,6 +19,7 @@
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59
 - [Tema 2 - JavaScript](./t2/README.md) - deadline: 19 noiembrie 2024, 23:59
+- [Tema 3 - Express](./t3/README.md) - deadline: 24 decembrie 2024, 23:59
 
 ## Proiect
 - [Specificații generale](https://docs.google.com/document/d/1HK2MVNMFAkI_o2VQY3R-3jxx51dDMbBRVlxuNm5knro/edit?tab=t.0)

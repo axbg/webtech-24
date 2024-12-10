@@ -192,7 +192,7 @@
         <!-- element nativ dialog utilizat pentru definirea unei ferestre modale ce va fi vizibila doar in momentul activarii -->
         <!-- in mod predefinit, un element de tip dialog va avea pozitionare absolute, fiind in afara flow-ului normal de afisare -->
         <!-- din acest motiv, cat timp este definita in acelasi parinte, modala poate fi plasata oriunde -->
-        <dialog id="addMovieModal" class="modal">
+        <dialog id="addMovieModal" class="modal" onkeydown="onModalKeyPress(event)">
             <!-- continutul modalei -->
             <div class="modal-content">
                 <div class="modal-header">
@@ -249,9 +249,10 @@
             <!-- containerul in care vor fi afisate filmele pe masura ce sunt incarcate, fiind la incarcarea paginii, gol -->
             <div id="moviesContainer">
             </div>
+        </div>
     </body>
-    <!-- includerea scriptului definit loca script.js -->
-    <script src="script.js"></script>
+    <!-- includerea scriptului definit local main.js -->
+    <script src="main.js"></script>
     </html>
     ```
 
@@ -277,6 +278,9 @@
         /* utilizarea unui container flex ce asigura redimensionarea automata a header-ului */
         display: flex;
         align-items: center;
+        /* pozitionarea sticky face ca headerul sa nu fie ascuns atunci cand are loc un scroll */
+        position: sticky;
+        top: 0;
         /* stilizarea padding-ului din partea stanga a elementului */
         padding-left: 20px;
     }
@@ -284,14 +288,13 @@
     .app-title {
         /* stilizarea dimensiunii si a stilului fontului utilizat */
         font-weight: bold;
-        font-size: 16px;
+        font-size: 32px;
     }
 
     .container {
         /* metoda clasica de centrare orizontala a unui element in cadrul altui element */
         margin: 0 auto;
         width: 80%;
-        padding: 20px;
     }
 
     .toolbar {
@@ -322,7 +325,7 @@
         /* ordonarea pe verticala a elementelor dintr-un flexbox */
         flex-direction: column;
         gap: 10px;
-        width: 100%;
+        flex: 1;
     }
 
     .movie-header {
@@ -374,7 +377,7 @@
         border-radius: 20px;
         font-weight: bold;
         background-color: #B31515;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         border: 1px solid black;
         /* stilizarea cursorului */
         cursor: pointer;
@@ -384,13 +387,9 @@
 
     /* Stilizarea modalei */
     .modal {
-        /* pozitionarea implicita modalei este absoluta, deci poate fi plasa la inceputul parintelui */
-        top: 0;
         /* acoperirea intregului spatiu disponibil din parinte */
         width: 100%;
         height: 100%;
-        padding: 0;
-        border: 0px;
         /* utlizarea unei culori de fundal, impreuna cu un coeficient de transparenta */
         background-color: rgba(0, 0, 0, 0.4);
         /* pozitionarea elementului absolut la inceputul paginii */
@@ -398,7 +397,7 @@
 
     .modal-content {
         background-color: #fff;
-        margin: 15% auto;
+        margin: 5% auto;
         padding: 20px;
         border: 1px solid #000;
         border-radius: 20px;
@@ -421,6 +420,10 @@
         margin: 20px 0;
         display: flex;
         flex-direction: column;
+    }
+
+    .create-form textarea {
+        resize: vertical;
     }
     ```
 
@@ -450,7 +453,7 @@
         // utilizarea fetch pentru a realiza apelul catre back-end
         fetch("http://localhost:8080/api/v1/movies?" + queryParams)
             .then(response => response.json())
-            .then(data => data.movies)
+            .then(data => data.records)
             .then(movies => {
                 const moviesList = document.getElementById("moviesContainer");
                 // modificarea continutului HTML al unui element
@@ -515,7 +518,7 @@
             headers: {
                 'Content-Type': 'application/json',
             }
-        }).then(response => {
+        }).then(() => {
             loadMovies();
         })
             .catch((error) => {
@@ -550,7 +553,7 @@
             },
             body: JSON.stringify(formData),
         })
-            .then(response => {
+            .then(() => {
                 // stergerea datelor introduse in formular dupa introducerea cu succes a unui film
                 document.getElementById("addMovieForm").reset();
                 // reincarcarea filmelor afisate

@@ -24,7 +24,7 @@ const getMovies = async (filters) => {
         });
 
     return await Movie.findAll({
-        attributes: ['id', 'title', 'year', 'director', 'genre', 'poster'],
+        attributes: ['id', 'title', 'year', 'director', 'genre', 'poster', 'duration', 'synopsis'],
         where: whereCondition
     });
 };

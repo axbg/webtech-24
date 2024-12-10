@@ -31,6 +31,7 @@
 - [Seminar 7 - Conectarea la baza de date folosind Sequelize](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-7)
 - [Seminar 8 - Definirea relațiilor între entități](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-8)
 - [Seminar 9 - Definirea front-end-ului: listare și creare](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-9)
+- [Seminar 10 - Stilizarea front-end-ului folosind CSS](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-10)
 
 ## Formulare
 - [Formular întrebări anonime](https://forms.gle/BuoJ3gvZbVnurxuL9)

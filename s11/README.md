@@ -169,8 +169,32 @@
                 useEffect(() => {
                     // metodă care se execută după randare
                     fetchData();
+      
+                    // opțional
+                    // callback-ul returnat din cadrul metodei useEffect va fi apelat atunci când componenta
+                    //  va fi eliminată de pe ecran (unmounted), cât timp pasăm un array gol ca argument secund
+                    return () => {
+                        console.log("clean up the component");
+                    }
                 }, []); // array-ul de dependențe gol înseamnă că ceea ce este definit în callback se execută doar la montare
 
+                useEffect(() => {
+                    // metodă care se execută după randare, de fiecare dată când are loc un update
+                    fetchData(); 
+      
+                    // opțional
+                    // callback-ul returnat din cadrul metodei useEffect va fi apelat atunci când la nivelul
+                    //  componentei are loc un update, înaintea re-randării
+                    return () => {
+                        console.log("clean up the component");
+                    } 
+                });
+      
+                useEffect(() => {
+                    // metodă care se execută după randare, de fiecare dată când variabila data se modifică
+                    fetchData();  
+                }, [data]);
+      
                 const fetchData = async () => {
                     const result = await fetchDataFromAPI();
                     setData(result);

@@ -1,0 +1,10 @@
+.movies-container {
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.movies-container img {
+    max-height: 200px;
+}

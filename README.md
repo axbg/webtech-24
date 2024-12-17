@@ -19,6 +19,7 @@
 
 ## Extra
 - [Express - Session-based authentication](./extra/express-session-authentication)
+- [React - Function components and hooks](./extra/react-hooks/)
 
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59

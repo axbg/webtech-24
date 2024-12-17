@@ -17,6 +17,9 @@
 - [Seminar 11 - React](./s11/README.md)
 - [Seminar 12 - React Router & Redux](./s12/README.md)
 
+## Extra
+- [Express - Session-based authentication](./extra/express-session-authentication)
+
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59
 - [Tema 2 - JavaScript](./t2/README.md) - deadline: 19 noiembrie 2024, 23:59

@@ -16,7 +16,7 @@
 - [Seminar 10 - CSS: dezvoltarea interfețelor grafice pe web](./s10/README.md)
 - [Seminar 11 - React](./s11/README.md)
 - [Seminar 12 - React Router & Redux](./s12/README.md)
-- [Seminar 13 - utilizarea bibliotecilor de componente](./s13/README.md)
+- [Seminar 13 - Utilizarea bibliotecilor de componente](./s13/README.md)
 
 ## Extra
 - [Express - Session-based authentication](./extra/express-session-authentication)

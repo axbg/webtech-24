@@ -272,6 +272,8 @@
 - Ulterior, vom crea un fișier pentru store, și un fișier pentru un reducer și acțiunile corespunzătoare fiecărui eveniment:
     - _src/reducers/movies-reducer.js_
         ```js
+        // utilizarea createSlice simplifica procesul de creare a actiunilor si a reducerilor
+        // fara aceasta metoda utilitara, actiunile si logica de selectare a acestora trebuie definite manual in reducer
         import { createSlice } from '@reduxjs/toolkit';
 
         const moviesSlice = createSlice({
@@ -290,7 +292,7 @@
             },
         });
 
-        // exportarea actiunilor
+        // exportarea creatorilor de actiuni
         export const { addMovie, setMovies } = moviesSlice.actions;
 
         // exportarea reducerului
@@ -310,29 +312,25 @@
 - Înainte de a putea folosi store-ul și acțiunile în aplicație, aceasta trebuie să fie _înglobată într-un context Redux_
     - _src/index.js_
         ```js
-        import ReactDOM from 'react-dom/client';
+        import { createRoot } from 'react-dom/client';
         import './index.css';
         import App from './App';
-        import reportWebVitals from './reportWebVitals';
         import store from './stores/store';
         import { Provider } from 'react-redux';
 
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(
+       createRoot(document.getElementById('root')).render(
             <React.StrictMode>
                 <Provider store={store}>
                     <App />
                 </Provider>
             </React.StrictMode>
         );
-
-        reportWebVitals();
         ```
 
 - Vom încărca datele în store în momentul accesării aplicației, în componenta _Home_
     - _src/pages/Home/index.jsx_
         ```js
-        import React, { useEffect } from 'react';
+        import { useEffect } from 'react';
         import { useNavigate } from 'react-router';
         import { useDispatch } from 'react-redux';
         import { setMovies } from '../../reducers/movies-reducer';
@@ -349,7 +347,7 @@
                 fetch(`${SERVER_URL}/movies`)
                     .then(res => res.json())
                     // dispatch-ul actiunii setMovies
-                    .then(data => dispatch(setMovies(data.movies)));
+                    .then(data => dispatch(setMovies(data.records)));
             }, []);
 
             return (
@@ -391,9 +389,9 @@
 - În plus, vom modifica și pagina Movies pentru a integra cea de-a doua acțiune, addMovie, ce va fi apelată imediat după ce un film va fi adăugat în aplicație
     - _src/pages/Movies/index.jsx_
         ```js
-        import React, { useState, useEffect } from 'react';
+        import { useState, useEffect } from 'react';
         import { useDispatch } from 'react-redux';
-        import { addMovie as addMovieAction } from '../../reducers/movies-reducer';
+        import { addMovie as addMovieAction, setMovies } from '../../reducers/movies-reducer';
 
         import { MovieCard } from '../../components/MovieCard';
 
@@ -404,21 +402,15 @@
         const SERVER_URL = "http://localhost:8080/api/v1";
 
         const Movies = () => {
-            const [movies, setMovies] = useState([]);
+            const movies = useSelector(state => state.movies);
             const [isModalOpen, setIsModalOpen] = useState(false);
 
             const dispatch = useDispatch();
 
             const getMovies = (queryTitle) => {
-                const queryParams = new URLSearchParams();
-
-                if (!!queryTitle) {
-                    queryParams.append("title", queryTitle);
-                }
-
-                fetch(`${SERVER_URL}/movies?` + queryParams)
+                fetch(`${SERVER_URL}/movies`)
                     .then(res => res.json())
-                    .then(data => setMovies(data.movies));
+                    .then(data => dispatch(setMovies(data.records)));
             };
 
             const addMovie = (movie) => {
@@ -432,7 +424,6 @@
                     .then(res => {
                         // dupa adaugarea unui film, il adaugam in store
                         dispatch(addMovieAction(movie));
-                        getMovies();
                     })
                     .catch(err => console.log(err));
             }
@@ -459,7 +450,7 @@
                 <div>
                     <div className="container">
                         <h3>All movies</h3>
-                        <Searchbar openModal={openModal} getMovies={getMovies} />
+                        <Searchbar openModal={openModal} />
                         <div id="moviesContainer">
                             {movies.map((movie, index) => (
                                 <MovieCard movie={movie} key={index} onDelete={deleteMovie} />
@@ -477,20 +468,37 @@
 - Iar in Searchbar vom adăuga un buton de navigare către o pagină inexistentă pentru a observa actualizarea automată a state-ului
     - _src/components/Searchbar/index.jsx_
         ```js
-        import React, { useState } from "react";
+        import { useState } from "react";
+        import { useDispatch } from 'react-redux';
         import { useNavigate } from 'react-router';
+        import { setMovies } from '../../reducers/movies-reducer';
 
         import "./style.css";
 
-        const Searchbar = ({ openModal, getMovies }) => {
+        const Searchbar = ({ openModal }) => {
             const [queryTitle, setQueryTitle] = useState(null);
 
             const navigate = useNavigate();
+            const dispatch = useDispatch();
 
             const onChangeQueryTitle = (event) => {
                 const searchedMovieTitle = event.target.value;
                 setQueryTitle(searchedMovieTitle);
             }
+            
+            // pentru a preveni repetarea codului din metoda getMovies, aceasta poate fi extrasă
+            // într-un fișier separat și, ulterior, importată
+            const getMovies = (queryTitle) => {
+                const queryParams = new URLSearchParams();
+
+                if (!!queryTitle) {
+                    queryParams.append("title", queryTitle);
+                }
+
+                fetch(`${SERVER_URL}/movies?` + queryParams)
+                    .then(res => res.json())
+                    .then(data => dispatch(setMovies(data.records)));
+            };
 
             return (
                 <div className="toolbar">

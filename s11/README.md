@@ -75,8 +75,6 @@
         - state-ul componentei este replicat utilizând hook-ul _useState_ (despre care vom discuta în secțiunile următoare)
         - **este necesară importarea contexului** din librăria React pentru ca fișierul să fie interpretat drept o componentă React și nu o funcție normală
         ```js
-        import React from 'react';
-
         function MyComponent(props) {
             // Logica de randare a componentei
         }
@@ -438,8 +436,6 @@
 
     - components/MovieCard/index.jsx
     ```jsx
-    import React from 'react';
-
     import './style.css';
 
     // componenta MovieCard primeste un prop denumit movie - obiectul ce descrie un film
@@ -473,7 +469,7 @@
 
     - components/CreateMovieModal/index.jsx
     ```jsx
-    import React, { useState } from 'react';
+    import { useState } from 'react';
 
     import "./style.css";
 

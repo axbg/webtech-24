@@ -21,6 +21,7 @@
 ## Extra
 - [Express - Session-based authentication](./extra/express-session-authentication)
 - [React - Function components and hooks](./extra/react-hooks/)
+- [React - Redux](./extra/react-redux/)
 - [React - Material UI](./extra/react-material-ui/)
 
 ## Teme

@@ -338,7 +338,7 @@
     - *src/components/Searchbar/index.jsx*
         ```js
         import { useState } from "react";
-        import { useNavigate } from 'react-router-dom';
+        import { useNavigate } from 'react-router';
 
         import "./style.css";
 

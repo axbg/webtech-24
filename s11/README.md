@@ -135,7 +135,7 @@
         - permite componentelor funcționale să stocheze și să gestioneze o stare locală
         - se definește mereu prin tuplul _[numeVariabilă, setNumeVariabilă]_
         ```js
-        import React, { useState } from 'react';
+        import { useState } from 'react';
 
         function ExampleComponent() {
             // variabila count din state-ul componentei

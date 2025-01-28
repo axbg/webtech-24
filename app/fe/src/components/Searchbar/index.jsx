@@ -1,16 +1,15 @@
 import {useState} from "react";
+import {useNavigate} from 'react-router';
 
 import "./style.css";
 
-// primirea unor metode din parinte ce vor fi apelate din copil
 const Searchbar = ({openModal, getMovies}) => {
-    // declaram o variabila state pentru a stoca titlul filmului cautat de utilizator
     const [queryTitle, setQueryTitle] = useState(null);
 
+    const navigate = useNavigate();
+
     const onChangeQueryTitle = (event) => {
-        // preluarea valorii introduse de utilizator pentru filmul cautat
         const searchedMovieTitle = event.target.value;
-        // setarea valorii in state
         setQueryTitle(searchedMovieTitle);
     }
 
@@ -20,6 +19,7 @@ const Searchbar = ({openModal, getMovies}) => {
                    placeholder="Search for a movie"/>
             <button className="custom-button" onClick={() => getMovies(queryTitle)}>Search</button>
             <button className="custom-button" onClick={() => openModal()}>Add a movie</button>
+            <button className="custom-button" onClick={() => navigate("/series")}>Series Page</button>
         </div>
     );
 };

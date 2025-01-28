@@ -2,7 +2,8 @@ import {useState, useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import {addMovie as addMovieAction} from '../../reducers/movies-reducer';
 
-import {MovieCard} from '../../components/MovieCard';
+import {MovieList} from '../../components/MovieList';
+import {MovieTable} from '../../components/MovieTable';
 
 import './style.css';
 import {CreateMovieModal} from '../../components/CreateMovieModal';
@@ -13,6 +14,7 @@ const SERVER_URL = "http://localhost:8080/api/v1";
 const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [viewMode, setViewMode] = useState("list");
 
     const dispatch = useDispatch();
 
@@ -44,10 +46,28 @@ const Movies = () => {
             .catch(err => console.log(err));
     }
 
-    const deleteMovie = (movie) => {
-        fetch(`${SERVER_URL}/movies/${movie.id}`, {method: "DELETE"})
-            .then(res => getMovies())
+    const updateMovie = (movie) => {
+        fetch(`${SERVER_URL}/movies`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(movie)
+        })
+            .then(res => updateLocalMovie(movie))
             .catch(err => console.log(err));
+    }
+
+    const updateLocalMovie = (updatedMovie) => {
+        setMovies(movies.map(movie => movie.id === updatedMovie.id ? {...updatedMovie} : {...movie}));
+    }
+
+    const deleteMovie = (movie) => {
+        if (confirm("Do you really want to delete this movie?")) {
+            fetch(`${SERVER_URL}/movies/${movie.id}`, {method: "DELETE"})
+                .then(res => getMovies())
+                .catch(err => console.log(err));
+        }
     }
 
     useEffect(() => {
@@ -62,16 +82,18 @@ const Movies = () => {
         setIsModalOpen(false);
     }
 
+    const switchView = () => {
+        setViewMode(viewMode === "list" ? "table" : "list");
+    }
+
     return (
         <div>
             <div className="container">
                 <h3>All movies</h3>
-                <Searchbar openModal={openModal} getMovies={getMovies}/>
-                <div id="moviesContainer">
-                    {movies.map((movie, index) => (
-                        <MovieCard movie={movie} key={index} onDelete={deleteMovie}/>
-                    ))}
-                </div>
+                <Searchbar openModal={openModal} getMovies={getMovies} switchView={switchView}/>
+                {viewMode === "list" &&
+                    <MovieList movies={movies} updateMovie={updateMovie} deleteMovie={deleteMovie}/>}
+                {viewMode === "table" && <MovieTable movies={movies} deleteMovie={deleteMovie}/>}
             </div>
             {isModalOpen && <CreateMovieModal onAddMovie={addMovie} closeModal={closeModal}/>}
         </div>

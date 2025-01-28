@@ -276,7 +276,7 @@
 
                 fetch(`${SERVER_URL}/movies?` + queryParams)
                     .then(res => res.json())
-                    .then(data => setMovies(data.movies));
+                    .then(data => setMovies(data.records));
             };
 
             const addMovie = (movie) => {

@@ -45,6 +45,7 @@
 - [Seminar 10 - Stilizarea front-end-ului folosind CSS](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-10)
 - [Seminar 11 - React](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-11)
 - [Seminar 12 - Integrare React Router & Redux](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-12)
+- [Seminar 13 - Integrare React Material UI](https://github.com/axbg/webtech-24/releases/tag/app-after-lab-13)
 
 ## Formulare
 - [Formular întrebări anonime](https://forms.gle/BuoJ3gvZbVnurxuL9)

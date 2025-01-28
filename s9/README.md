@@ -318,7 +318,7 @@
             // apelarea endpoint-ului de listare a filmelor
             fetch("http://localhost:8080/api/v1/movies")
                 .then(response => response.json())
-                .then(data => data.movies)
+                .then(data => data.records)
                 .then(movies => {
                     // selectarea unui element din pagină pe baza ID-ului
                     const moviesList = document.getElementById("moviesContainer");

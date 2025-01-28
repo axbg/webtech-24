@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router';
 
 import "./style.css";
 
-const Searchbar = ({openModal, getMovies}) => {
+const Searchbar = ({openModal, getMovies, switchView}) => {
     const [queryTitle, setQueryTitle] = useState(null);
 
     const navigate = useNavigate();
@@ -18,6 +18,7 @@ const Searchbar = ({openModal, getMovies}) => {
             <input onChange={onChangeQueryTitle} id="search" className="searchbar custom-text-input" type="text"
                    placeholder="Search for a movie"/>
             <button className="custom-button" onClick={() => getMovies(queryTitle)}>Search</button>
+            <button className="custom-button" onClick={() => switchView()}>Switch view</button>
             <button className="custom-button" onClick={() => openModal()}>Add a movie</button>
             <button className="custom-button" onClick={() => navigate("/series")}>Series Page</button>
         </div>

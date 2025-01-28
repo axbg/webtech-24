@@ -24,6 +24,9 @@
 - [React - Redux](./extra/react-redux/)
 - [React - Material UI](./extra/react-material-ui/)
 
+## Examen
+- [Template](https://github.com/hypothetical-andrei/exam-base-2024)
+
 ## Teme
 - [Tema 1 - JavaScript](./t1/README.md) - deadline: 29 octombrie 2024, 23:59
 - [Tema 2 - JavaScript](./t2/README.md) - deadline: 19 noiembrie 2024, 23:59
@@ -55,6 +58,11 @@
 - [Cursuri video](https://www.youtube.com/watch?v=RLz2q9SKObw&list=PLYdpEVB86eG7P8z3bUn_lC7UZ-Jr4hUIR)
 - [Curs interactiv](https://student.nextlab.tech/#/dashbard/public-library/6151e7da0c909059bda2f2df)
 - [Planificare](https://docs.google.com/document/d/1XBQmrZBd-54zHDwqe8KGo58qhiaebgFo/edit?usp=sharing&ouid=114681964307685525851&rtpof=true&sd=true)
+
+## Resurse suplimentare
+- [Deploy aplicație back-end Node.js](https://www.youtube.com/watch?v=4bS7KS_s8Go)
+- [Deploy aplicație front-end React folosind Node.js/Express.js](https://www.youtube.com/watch?v=QBXWZPy1Zfs)
+- [Deploy aplicație front-end React folosind nginx](https://www.youtube.com/watch?v=tGYNYPKTyno)
 
 ## Software necesar
 - [Git](https://git-scm.com/downloads)

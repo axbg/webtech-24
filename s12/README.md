@@ -143,7 +143,7 @@
     - orice altă rută va afișa pagina _NotFound_
 
 - Configurarea routerului se va face în componenta root a aplicației
-    - src/App.js
+    - src/App.jsx
   ```js
   import { BrowserRouter as Router, Routes, Route } from 'react-router';
   import { Movies } from './pages/Movies';
